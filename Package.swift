@@ -1,4 +1,4 @@
-// swift-tools-version:5.0
+// swift-tools-version:5.9
 
 /**
  *  DominantColor
@@ -11,9 +11,10 @@ import PackageDescription
 let package = Package(
     name: "DominantColor",
     platforms: [
-       .macOS(.v10_13),
-       .iOS(.v11),
-       .tvOS(.v11)
+       .macOS(.v14),
+       .iOS(.v17),
+       .tvOS(.v17),
+       .visionOS(.v1)
     ],
     products: [
         .library(name: "DominantColor", targets: ["DominantColor"]),

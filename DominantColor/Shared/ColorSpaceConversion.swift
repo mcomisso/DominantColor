@@ -17,7 +17,7 @@ import simd
 // MARK: - RGB
 
 func RGBToSRGB(_ rgbVector: simd_float3) -> simd_float3 {
-    #if os(iOS) || os(tvOS)
+    #if os(iOS) || os(tvOS) || os(visionOS)
     return rgbVector
     #elseif os(OSX)
     let rgbColor = NSColor(deviceRed: CGFloat(rgbVector.x), green: CGFloat(rgbVector.y), blue: CGFloat(rgbVector.z), alpha: 1.0)
@@ -29,7 +29,7 @@ func RGBToSRGB(_ rgbVector: simd_float3) -> simd_float3 {
 }
 
 func SRGBToRGB(_ srgbVector: simd_float3) -> simd_float3 {
-    #if os(iOS) || os(tvOS)
+    #if os(iOS) || os(tvOS) || os(visionOS)
     return srgbVector
     #elseif os(OSX)
     let components: [CGFloat] = [CGFloat(srgbVector.x), CGFloat(srgbVector.y), CGFloat(srgbVector.z), 1.0]
